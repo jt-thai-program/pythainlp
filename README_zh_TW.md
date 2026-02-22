@@ -1,4 +1,4 @@
-# PyThaiNLP: Thai Natural Language Processing in Python
+# PyThaiNLP: 泰文自然語言處理 Python 函式庫
 
 ![Project Logo](https://avatars0.githubusercontent.com/u/32934255?s=200&v=4)
 
@@ -14,101 +14,85 @@
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#thainlp:matrix.org)
 
 [pythainlp.org](https://pythainlp.org/)
-| [Tutorials](https://pythainlp.org/tutorials)
-| [License info](https://pythainlp.org/dev-docs/notes/license.html)
-| [Model cards](https://github.com/PyThaiNLP/pythainlp/wiki/Model-Cards)
-| [Adopters](https://github.com/PyThaiNLP/pythainlp/blob/dev/INTHEWILD.md)
+| [教程](https://pythainlp.org/tutorials)
+| [授權資訊](https://pythainlp.org/dev-docs/notes/license.html)
+| [模型卡 (Model cards)](https://github.com/PyThaiNLP/pythainlp/wiki/Model-Cards)
+| [採用者](https://github.com/PyThaiNLP/pythainlp/blob/dev/INTHEWILD_zh_TW.md)
 | *[เอกสารภาษาไทย](https://github.com/PyThaiNLP/pythainlp/blob/dev/README_TH.md)*
-| *[繁體中文](https://github.com/PyThaiNLP/pythainlp/blob/dev/README_zh_TW.md)*
+| *[English](https://github.com/PyThaiNLP/pythainlp/blob/dev/README.md)*
 
-Designed to be a Thai-focused counterpart to [NLTK](https://www.nltk.org/),
-**PyThaiNLP** provides standard tools for linguistic analysis under
-an Apache-2.0 license, with its data and models covered by CC0-1.0
-and CC-BY-4.0.
+**PyThaiNLP** 旨在成為泰文版的 [NLTK](https://www.nltk.org/)，在 Apache-2.0 授權下提供標準的語言分析工具，其數據和模型則採用 CC0-1.0 和 CC-BY-4.0 授權。
 
 ```sh
 pip install pythainlp
 ```
 
-| Version | Python version | Changes | Documentation |
+| 版本 | Python 版本 | 變更日誌 | 文件 |
 |:-------:|:--------------:|:-------:|:-------------:|
-| [5.2.0](https://github.com/PyThaiNLP/pythainlp/releases) | 3.7+ | [Log](https://github.com/PyThaiNLP/pythainlp/issues/1080) | [pythainlp.org/docs](https://pythainlp.org/docs) |
-| [`dev`](https://github.com/PyThaiNLP/pythainlp/tree/dev) | 3.9+ | [Log](https://github.com/PyThaiNLP/pythainlp/issues/1169) | [pythainlp.org/dev-docs](https://pythainlp.org/dev-docs/) |
+| [5.2.0](https://github.com/PyThaiNLP/pythainlp/releases) | 3.7+ | [紀錄](https://github.com/PyThaiNLP/pythainlp/issues/1080) | [pythainlp.org/docs](https://pythainlp.org/docs) |
+| [`dev`](https://github.com/PyThaiNLP/pythainlp/tree/dev) | 3.9+ | [紀錄](https://github.com/PyThaiNLP/pythainlp/issues/1169) | [pythainlp.org/dev-docs](https://pythainlp.org/dev-docs/) |
 
-## Features
+## 功能特點
 
-- **Linguistic units:** Sentence, word, and subword segmentation
-  (`sent_tokenize`, `word_tokenize`, `subword_tokenize`).
-- **Tagging:** Part-of-speech tagging (`pos_tag`).
-- **Transliteration:** Romanization (`transliterate`) and IPA conversion.
-- **Correction:** Spelling suggestion and correction (`spell`, `correct`).
-- **Utilities:** Soundex, collation, number-to-text (`bahttext`), datetime
-  formatting (`thai_strftime`), and keyboard layout correction.
-- **Data:** Built-in Thai character sets, word lists, and stop words.
-- **CLI:** Command-line interface via `thainlp`.
+- **語言單位：** 句子、詞彙和子詞切分 (`sent_tokenize`, `word_tokenize`, `subword_tokenize`)。
+- **標註：** 詞性標註 (`pos_tag`)。
+- **轉寫：** 羅馬拼音化 (`transliterate`) 和 IPA 轉換。
+- **校正：** 拼寫建議與校正 (`spell`, `correct`)。
+- **公用程式：** Soundex、排序 (collation)、數字轉文字 (`bahttext`)、日期時間格式化 (`thai_strftime`) 以及鍵盤佈局校正。
+- **數據：** 內建泰文字元集、詞彙表和停用詞。
+- **CLI：** 透過 `thainlp` 指令使用命令行介面。
 
   ```sh
-  thainlp data catalog  # List datasets
-  thainlp help          # Show usage
+  thainlp data catalog  # 列出數據集
+  thainlp help          # 顯示用法
   ```
 
-## Installation options
+## 安裝選項
 
-To install with specific extras (e.g., `translate`, `wordnet`, `full`):
+安裝特定的額外功能（例如：`translate`, `wordnet`, `full`）：
 
 ```sh
 pip install "pythainlp[extra1,extra2,...]"
 ```
 
-Possible `extras` included:
+可選的 `extras` 包括：
 
-- `compact` — install a stable and small subset of dependencies (recommended)
-- `translate` — machine translation support
-- `wordnet` — WordNet support
-- `full` — install all optional dependencies (may introduce conflicts)
+- `compact` — 安裝穩定且較小的依賴子集（建議使用）
+- `translate` — 機器翻譯支持
+- `wordnet` — WordNet 支持
+- `full` — 安裝所有可選依賴項（可能會引入衝突）
 
-The documentation website maintains the
-[full list of extras](https://pythainlp.org/dev-docs/notes/installation.html).
-To see the specific libraries included in each extra,
-please inspect the `[project.optional-dependencies]` section of
-[`pyproject.toml`](https://github.com/PyThaiNLP/pythainlp/blob/dev/pyproject.toml).
+文件網站維護了[完整的安裝額外功能列表](https://pythainlp.org/dev-docs/notes/installation.html)。
+要查看每個額外功能包含的具體庫，請檢查 [`pyproject.toml`](https://github.com/PyThaiNLP/pythainlp/blob/dev/pyproject.toml) 的 `[project.optional-dependencies]` 部分。
 
-## Data directory
+## 數據目錄
 
-PyThaiNLP downloads data (see the data catalog `db.json` at
-[pythainlp-corpus](https://github.com/PyThaiNLP/pythainlp-corpus))
-to `~/pythainlp-data` by default.
-Set the `PYTHAINLP_DATA_DIR` environment variable to override this location.
+PyThaiNLP 預設會將數據（參見 [pythainlp-corpus](https://github.com/PyThaiNLP/pythainlp-corpus) 的數據目錄 `db.json`）下載到 `~/pythainlp-data`。
+設置 `PYTHAINLP_DATA_DIR` 環境變數可以覆蓋此位置。
 
-When using PyThaiNLP in distributed computing environments
-(e.g., Apache Spark), set the `PYTHAINLP_DATA_DIR` environment variable
-inside the function that will be distributed to worker nodes.
-See details in
-[the documentation](https://pythainlp.org/dev-docs/notes/installation.html).
+在分佈式計算環境（如 Apache Spark）中使用 PyThaiNLP 時，請在分發到工作節點的函數內部設置 `PYTHAINLP_DATA_DIR` 環境變數。詳細資訊請參閱[文件](https://pythainlp.org/dev-docs/notes/installation.html)。
 
-## Testing
+## 測試
 
-We test core functionalities on all officially supported Python versions.
+我們在所有官方支持的 Python 版本上測試核心功能。
 
-See [tests/README.md](./tests/README.md) for test matrix and other details.
+有關測試矩陣和其他詳細資訊，請參閱 [tests/README_zh_TW.md](./tests/README_zh_TW.md)。
 
-## Contribute to PyThaiNLP
+## 貢獻 PyThaiNLP
 
-Please fork and create a pull request.
-See [CONTRIBUTING.md](https://github.com/PyThaiNLP/pythainlp/blob/dev/CONTRIBUTING.md)
-for guidelines and algorithm references.
+請 Fork 並建立 Pull Request。
+有關指南和演算法參考，請參閱 [CONTRIBUTING_zh_TW.md](https://github.com/PyThaiNLP/pythainlp/blob/dev/CONTRIBUTING_zh_TW.md)。
 
-## Citations
+## 引用
 
-If you use `PyThaiNLP` library in your project,
-please cite the software as follows:
+如果您在專案中使用 `PyThaiNLP` 庫，請按以下方式引用：
 
 > Phatthiyaphaibun, Wannaphong, Korakot Chaovavanich, Charin Polpanumas,
 > Arthit Suriyawongkul, Lalita Lowphansirikul, and Pattarawat Chormai.
 > “PyThaiNLP: Thai Natural Language Processing in Python”.
 > Zenodo, 2 June 2024. <http://doi.org/10.5281/zenodo.3519354>.
 
-with this BibTeX entry:
+BibTeX 條目：
 
 ```bibtex
 @software{pythainlp,
@@ -128,8 +112,7 @@ with this BibTeX entry:
 }
 ```
 
-To cite our [NLP-OSS 2023](https://nlposs.github.io/2023/) academic paper,
-please cite the paper as follows:
+若要引用我們在 [NLP-OSS 2023](https://nlposs.github.io/2023/) 發表的學術論文：
 
 > Wannaphong Phatthiyaphaibun, Korakot Chaovavanich, Charin Polpanumas,
 > Arthit Suriyawongkul, Lalita Lowphansirikul, Pattarawat Chormai,
@@ -141,7 +124,7 @@ please cite the paper as follows:
 > pages 25–36, Singapore, Singapore.
 > Empirical Methods in Natural Language Processing.
 
-with this BibTeX entry:
+BibTeX 條目：
 
 ```bibtex
 @inproceedings{phatthiyaphaibun-etal-2023-pythainlp,
@@ -171,12 +154,12 @@ with this BibTeX entry:
 }
 ```
 
-## Sponsors
+## 贊助商
 
-| Logo | Description |
+| 標誌 | 說明 |
 | --- | ----------- |
-| [![VISTEC-depa Thailand Artificial Intelligence Research Institute](https://airesearch.in.th/assets/img/logo/airesearch-logo.svg)](https://airesearch.in.th/) | Since 2019, our contributors Korakot Chaovavanich and Lalita Lowphansirikul have been supported by [VISTEC-depa Thailand Artificial Intelligence Research Institute](https://airesearch.in.th/). |
-| [![MacStadium](https://i.imgur.com/rKy1dJX.png)](https://www.macstadium.com) | We get support of free Mac Mini M1 from [MacStadium](https://www.macstadium.com) for running CI builds. |
+| [![VISTEC-depa Thailand Artificial Intelligence Research Institute](https://airesearch.in.th/assets/img/logo/airesearch-logo.svg)](https://airesearch.in.th/) | 自 2019 年以來，我們的貢獻者 Korakot Chaovavanich 和 Lalita Lowphansirikul 得到了 [VISTEC-depa 泰國人工智慧研究所](https://airesearch.in.th/) 的支持。 |
+| [![MacStadium](https://i.imgur.com/rKy1dJX.png)](https://www.macstadium.com) | 我們從 [MacStadium](https://www.macstadium.com) 獲得免費的 Mac Mini M1 支持，用於運行 CI 構建。 |
 
 ------
 
@@ -187,12 +170,11 @@ with this BibTeX entry:
 ------
 
 <div align="center">
-  <strong>We have only one official repository at
-  https://github.com/PyThaiNLP/pythainlp and another mirror at
+  <strong>我們只有一個官方存儲庫在
+  https://github.com/PyThaiNLP/pythainlp，另一個鏡像在
   https://gitlab.com/pythainlp/pythainlp</strong>
 </div>
 
 <div align="center">
-  <strong>Beware of malware if you use code from mirrors other than the
-  official two on GitHub and GitLab.</strong>
+  <strong>如果您使用官方 GitHub 和 GitLab 以外的鏡像代碼，請小心惡意軟體。</strong>
 </div>
